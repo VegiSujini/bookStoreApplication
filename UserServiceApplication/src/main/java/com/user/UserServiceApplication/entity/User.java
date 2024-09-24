@@ -2,8 +2,10 @@ package com.user.UserServiceApplication.entity;
 
 public class User {
     private Long id;
-    private String username;
+    private String username; // This should match what is sent from the frontend
     private String password;
+
+    public User() {} // Default constructor needed for JSON deserialization
 
     public User(Long id, String username, String password) {
         this.id = id;
@@ -19,11 +21,11 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
+    public String getUsername() { // Note: This getter should match the frontend's key
         return username;
     }
 
-    public void setUserName(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -34,5 +36,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
